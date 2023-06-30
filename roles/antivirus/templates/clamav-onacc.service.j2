@@ -3,7 +3,7 @@ Description=Clam AntiVirus clamonacc daemon
 Documentation=man:clamd(8) man:clamd.conf(5) https://docs.clamav.net/
 
 [Service]
-ExecStart=/usr/sbin/clamonacc --stream --foreground=true
+ExecStart=/usr/sbin/clamonacc -F --fdpass --log=/var/log/clamav/clamonacc.log
 # Reload the database
 ExecReload=/bin/kill -USR2 $MAINPID
 StandardOutput=syslog
